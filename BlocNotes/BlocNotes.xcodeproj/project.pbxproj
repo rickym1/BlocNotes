@@ -15,6 +15,12 @@
 		DD19AE801B794F0700EAA504 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD19AE7F1B794F0700EAA504 /* Images.xcassets */; };
 		DD19AE831B794F0700EAA504 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD19AE811B794F0700EAA504 /* LaunchScreen.xib */; };
 		DD19AE8F1B794F0700EAA504 /* BlocNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AE8E1B794F0700EAA504 /* BlocNotesTests.m */; };
+		DD19AE9A1B795AA000EAA504 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AE991B795AA000EAA504 /* MainTableViewController.m */; };
+		DD19AE9D1B795AEA00EAA504 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AE9C1B795AEA00EAA504 /* AddNoteViewController.m */; };
+		DD19AEA01B795C7F00EAA504 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AE9F1B795C7F00EAA504 /* EditNoteViewController.m */; };
+		DD19AEA31B79609100EAA504 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA21B79609100EAA504 /* NoteTableViewCell.m */; };
+		DD19AEA61B7978C600EAA504 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA51B7978C600EAA504 /* CoreDataStack.m */; };
+		DD19AEA91B797CEC00EAA504 /* NoteEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA81B797CEC00EAA504 /* NoteEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,18 @@
 		DD19AE881B794F0700EAA504 /* BlocNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD19AE8D1B794F0700EAA504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD19AE8E1B794F0700EAA504 /* BlocNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocNotesTests.m; sourceTree = "<group>"; };
+		DD19AE981B795AA000EAA504 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		DD19AE991B795AA000EAA504 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		DD19AE9B1B795AEA00EAA504 /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		DD19AE9C1B795AEA00EAA504 /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		DD19AE9E1B795C7F00EAA504 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
+		DD19AE9F1B795C7F00EAA504 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		DD19AEA11B79609100EAA504 /* NoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
+		DD19AEA21B79609100EAA504 /* NoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
+		DD19AEA41B7978C600EAA504 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		DD19AEA51B7978C600EAA504 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		DD19AEA71B797CEC00EAA504 /* NoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteEntry.h; sourceTree = "<group>"; };
+		DD19AEA81B797CEC00EAA504 /* NoteEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +101,21 @@
 		DD19AE6E1B794F0700EAA504 /* BlocNotes */ = {
 			isa = PBXGroup;
 			children = (
+				DD19AE7C1B794F0700EAA504 /* Main.storyboard */,
+				DD19AE981B795AA000EAA504 /* MainTableViewController.h */,
+				DD19AE991B795AA000EAA504 /* MainTableViewController.m */,
+				DD19AEA11B79609100EAA504 /* NoteTableViewCell.h */,
+				DD19AEA21B79609100EAA504 /* NoteTableViewCell.m */,
+				DD19AE9E1B795C7F00EAA504 /* EditNoteViewController.h */,
+				DD19AE9F1B795C7F00EAA504 /* EditNoteViewController.m */,
+				DD19AE9B1B795AEA00EAA504 /* AddNoteViewController.h */,
+				DD19AE9C1B795AEA00EAA504 /* AddNoteViewController.m */,
+				DD19AEA71B797CEC00EAA504 /* NoteEntry.h */,
+				DD19AEA81B797CEC00EAA504 /* NoteEntry.m */,
+				DD19AEA41B7978C600EAA504 /* CoreDataStack.h */,
+				DD19AEA51B7978C600EAA504 /* CoreDataStack.m */,
 				DD19AE731B794F0700EAA504 /* AppDelegate.h */,
 				DD19AE741B794F0700EAA504 /* AppDelegate.m */,
-				DD19AE791B794F0700EAA504 /* ViewController.h */,
-				DD19AE7A1B794F0700EAA504 /* ViewController.m */,
-				DD19AE7C1B794F0700EAA504 /* Main.storyboard */,
 				DD19AE7F1B794F0700EAA504 /* Images.xcassets */,
 				DD19AE811B794F0700EAA504 /* LaunchScreen.xib */,
 				DD19AE761B794F0700EAA504 /* BlocNotes.xcdatamodeld */,
@@ -99,6 +127,8 @@
 		DD19AE6F1B794F0700EAA504 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DD19AE791B794F0700EAA504 /* ViewController.h */,
+				DD19AE7A1B794F0700EAA504 /* ViewController.m */,
 				DD19AE701B794F0700EAA504 /* Info.plist */,
 				DD19AE711B794F0700EAA504 /* main.m */,
 			);
@@ -222,10 +252,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD19AE9D1B795AEA00EAA504 /* AddNoteViewController.m in Sources */,
 				DD19AE751B794F0700EAA504 /* AppDelegate.m in Sources */,
 				DD19AE781B794F0700EAA504 /* BlocNotes.xcdatamodeld in Sources */,
+				DD19AEA01B795C7F00EAA504 /* EditNoteViewController.m in Sources */,
 				DD19AE7B1B794F0700EAA504 /* ViewController.m in Sources */,
+				DD19AE9A1B795AA000EAA504 /* MainTableViewController.m in Sources */,
 				DD19AE721B794F0700EAA504 /* main.m in Sources */,
+				DD19AEA31B79609100EAA504 /* NoteTableViewCell.m in Sources */,
+				DD19AEA91B797CEC00EAA504 /* NoteEntry.m in Sources */,
+				DD19AEA61B7978C600EAA504 /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
