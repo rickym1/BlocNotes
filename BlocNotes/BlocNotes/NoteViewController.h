@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddNoteViewController : UIViewController
+@class NoteEntry;
+
+@interface NoteViewController : UIViewController
+
+@property (nonatomic, strong) NoteEntry *entry;
 
 @end

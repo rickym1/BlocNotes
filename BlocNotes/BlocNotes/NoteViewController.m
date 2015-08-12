@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Bloc. All rights reserved.
 //
 
-#import "AddNoteViewController.h"
+#import "NoteViewController.h"
 #import "NoteEntry.h"
 #import "CoreDataStack.h"
 
 
-@interface AddNoteViewController ()
+@interface NoteViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *addNoteTextView;
 
 @end
 
-@implementation AddNoteViewController
+@implementation NoteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +40,7 @@
 
 - (IBAction)saveNotePressed:(id)sender {
     [self insertNoteEntry];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
     
 }

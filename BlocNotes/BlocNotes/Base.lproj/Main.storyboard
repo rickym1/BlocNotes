@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Add Note View Controller-->
+        <!--Note View Controller-->
         <scene sceneID="sGp-Zc-QeE">
             <objects>
-                <viewController id="2GB-Hf-qIL" customClass="AddNoteViewController" sceneMemberID="viewController">
+                <viewController id="2GB-Hf-qIL" customClass="NoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vT3-pk-yXb"/>
                         <viewControllerLayoutGuide type="bottom" id="nHi-co-90h"/>
@@ -61,6 +61,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oYd-vC-MuO" id="hWe-dT-Tva">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2GB-Hf-qIL" kind="show" identifier="showEditNote" id="coU-zc-BkZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -99,4 +102,7 @@
             <point key="canvasLocation" x="1083" y="301"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="coU-zc-BkZ"/>
+    </inferredMetricsTieBreakers>
 </document>
