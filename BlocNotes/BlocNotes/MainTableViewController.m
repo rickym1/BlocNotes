@@ -10,6 +10,7 @@
 #import "CoreDataStack.h"
 #import "NoteEntry.h"
 #import "NoteViewController.h"
+#import "NoteTableViewCell.h"
 
 @interface MainTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -54,11 +55,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     NoteEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = entry.body;
+    cell.noteLabel.text = entry.body;
     
     return cell;
 }
