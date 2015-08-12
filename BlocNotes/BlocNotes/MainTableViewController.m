@@ -108,7 +108,8 @@
     if ([segue.identifier isEqualToString:@"showEditNote"]) {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        NoteViewController *noteViewController = 
+        NoteViewController *noteViewController = (NoteViewController *)segue.destinationViewController;
+        noteViewController.entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
 }
 

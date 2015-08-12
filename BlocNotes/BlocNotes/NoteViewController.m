@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (self.entry != nil) {
+        self.addNoteTextView.text = self.entry.body;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,8 +42,22 @@
     
 }
 
+- (void) updateNoteEntry {
+    
+    self.entry.body = self.addNoteTextView.text;
+    
+    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+    [coreDataStack saveContext];
+    
+}
+
 - (IBAction)saveNotePressed:(id)sender {
-    [self insertNoteEntry];
+    if (self.entry != nil) {
+        [self updateNoteEntry];
+    } else {
+        [self insertNoteEntry];
+    }
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
     
     
