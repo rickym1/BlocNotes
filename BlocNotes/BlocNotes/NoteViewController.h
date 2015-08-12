@@ -12,6 +12,10 @@
 
 @interface NoteViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *addNoteTextView;
+@property (weak, nonatomic) IBOutlet UITextField *addTitleTextView;
+
+
 @property (nonatomic, strong) NoteEntry *entry;
 
 @end
