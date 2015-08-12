@@ -17,20 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Invisible?" translatesAutoresizingMaskIntoConstraints="NO" id="YgD-bi-c6Q">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text?" translatesAutoresizingMaskIntoConstraints="NO" id="YgD-bi-c6Q">
                                 <rect key="frame" x="16" y="64" width="568" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-wk-qMi">
+                                <rect key="frame" x="16" y="64" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="YgD-bi-c6Q" secondAttribute="bottom" id="AFN-G8-zJ1"/>
+                            <constraint firstItem="YgD-bi-c6Q" firstAttribute="top" secondItem="cuk-wk-qMi" secondAttribute="top" id="KOY-dm-nlq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cuk-wk-qMi" secondAttribute="trailing" id="M8H-Bl-bBz"/>
                             <constraint firstItem="YgD-bi-c6Q" firstAttribute="leading" secondItem="eDt-XW-PFV" secondAttribute="leadingMargin" id="SON-Ox-tnM"/>
                             <constraint firstItem="YgD-bi-c6Q" firstAttribute="top" secondItem="vT3-pk-yXb" secondAttribute="bottom" id="VM7-VN-jdR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YgD-bi-c6Q" secondAttribute="trailing" id="Xvv-wT-EXC"/>
+                            <constraint firstItem="cuk-wk-qMi" firstAttribute="top" secondItem="vT3-pk-yXb" secondAttribute="bottom" id="oRM-3W-ZjY"/>
+                            <constraint firstItem="cuk-wk-qMi" firstAttribute="leading" secondItem="eDt-XW-PFV" secondAttribute="leadingMargin" id="zA3-9r-vS5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VM7-VN-jdR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="3xj-qx-Ebi">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="tGg-zZ-k2h">
@@ -41,6 +55,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addNoteTextView" destination="YgD-bi-c6Q" id="YG0-yE-tgd"/>
+                        <outlet property="addTitleTextView" destination="cuk-wk-qMi" id="MLG-rI-vbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56r-Ot-rbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
