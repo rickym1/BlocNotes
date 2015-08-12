@@ -75,6 +75,38 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oYd-vC-MuO" id="hWe-dT-Tva">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utq-GL-Wag">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="YU0-oT-mwB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-Yp-RUz">
+                                            <rect key="frame" x="8" y="15" width="584" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="utq-GL-Wag" secondAttribute="trailing" id="A09-sY-U62"/>
+                                        <constraint firstItem="utq-GL-Wag" firstAttribute="top" secondItem="hWe-dT-Tva" secondAttribute="topMargin" constant="-8" id="Aiw-kN-ZBK"/>
+                                        <constraint firstItem="Xl6-Yp-RUz" firstAttribute="leading" secondItem="hWe-dT-Tva" secondAttribute="leadingMargin" id="HF6-3M-l8l"/>
+                                        <constraint firstItem="utq-GL-Wag" firstAttribute="top" secondItem="Xl6-Yp-RUz" secondAttribute="top" constant="-15" id="d8g-SM-XPB"/>
+                                        <constraint firstItem="utq-GL-Wag" firstAttribute="leading" secondItem="hWe-dT-Tva" secondAttribute="leadingMargin" id="nO8-y0-AZF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Xl6-Yp-RUz" secondAttribute="bottom" id="tNH-UE-SE5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="utq-GL-Wag" secondAttribute="bottom" constant="15" id="utY-d1-rvs"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xl6-Yp-RUz" secondAttribute="trailing" id="wEZ-Rx-Zci"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="utY-d1-rvs"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="2GB-Hf-qIL" kind="show" identifier="showEditNote" id="coU-zc-BkZ"/>
