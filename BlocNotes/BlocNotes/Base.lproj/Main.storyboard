@@ -75,7 +75,6 @@
                     <connections>
                         <outlet property="addNoteTextView" destination="YgD-bi-c6Q" id="YG0-yE-tgd"/>
                         <outlet property="addTitleTextView" destination="cuk-wk-qMi" id="MLG-rI-vbG"/>
-                        <outlet property="sharePressed" destination="Swr-lw-v4D" id="ncg-1e-wbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56r-Ot-rbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
