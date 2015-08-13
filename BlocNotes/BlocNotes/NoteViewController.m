@@ -65,6 +65,20 @@
     
 }
 
+- (IBAction)sharePressed:(id)sender {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (self.addNoteTextView.text.length > 0) {
+        [itemsToShare addObject:self.addNoteTextView.text];
+    }
+    
+    if (itemsToShare.count > 0) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+    
+}
+
 /*
 #pragma mark - Navigation
 

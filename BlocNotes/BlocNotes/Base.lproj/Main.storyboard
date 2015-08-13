@@ -28,20 +28,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swr-lw-v4D">
+                                <rect key="frame" x="16" y="540" width="568" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.51493611992693111" blue="0.11230125591239126" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jn0-MR-h07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sharePressed:" destination="2GB-Hf-qIL" eventType="touchUpInside" id="1k4-Tw-Vkd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Swr-lw-v4D" firstAttribute="leading" secondItem="eDt-XW-PFV" secondAttribute="leadingMargin" id="0PT-qL-GIO"/>
                             <constraint firstAttribute="bottomMargin" secondItem="YgD-bi-c6Q" secondAttribute="bottom" id="AFN-G8-zJ1"/>
                             <constraint firstItem="YgD-bi-c6Q" firstAttribute="top" secondItem="cuk-wk-qMi" secondAttribute="top" id="KOY-dm-nlq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Swr-lw-v4D" secondAttribute="trailing" id="M6m-j8-5Ji"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cuk-wk-qMi" secondAttribute="trailing" id="M8H-Bl-bBz"/>
                             <constraint firstItem="YgD-bi-c6Q" firstAttribute="leading" secondItem="eDt-XW-PFV" secondAttribute="leadingMargin" id="SON-Ox-tnM"/>
                             <constraint firstItem="YgD-bi-c6Q" firstAttribute="top" secondItem="vT3-pk-yXb" secondAttribute="bottom" id="VM7-VN-jdR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YgD-bi-c6Q" secondAttribute="trailing" id="Xvv-wT-EXC"/>
+                            <constraint firstItem="Swr-lw-v4D" firstAttribute="bottom" secondItem="YgD-bi-c6Q" secondAttribute="bottom" id="ewg-8K-4wu"/>
+                            <constraint firstItem="nHi-co-90h" firstAttribute="top" secondItem="Swr-lw-v4D" secondAttribute="bottom" id="fde-1c-dLz"/>
                             <constraint firstItem="cuk-wk-qMi" firstAttribute="top" secondItem="vT3-pk-yXb" secondAttribute="bottom" id="oRM-3W-ZjY"/>
                             <constraint firstItem="cuk-wk-qMi" firstAttribute="leading" secondItem="eDt-XW-PFV" secondAttribute="leadingMargin" id="zA3-9r-vS5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="AFN-G8-zJ1"/>
                                 <exclude reference="VM7-VN-jdR"/>
                             </mask>
                         </variation>
@@ -56,6 +75,7 @@
                     <connections>
                         <outlet property="addNoteTextView" destination="YgD-bi-c6Q" id="YG0-yE-tgd"/>
                         <outlet property="addTitleTextView" destination="cuk-wk-qMi" id="MLG-rI-vbG"/>
+                        <outlet property="sharePressed" destination="Swr-lw-v4D" id="ncg-1e-wbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56r-Ot-rbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
