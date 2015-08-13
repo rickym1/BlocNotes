@@ -14,5 +14,6 @@
 
 @property (nonatomic) NSTimeInterval date;
 @property (nonatomic, retain) NSString * body;
+@property (nonatomic, retain) NSString * title;
 
 @end

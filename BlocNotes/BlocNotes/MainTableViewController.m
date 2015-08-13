@@ -59,6 +59,7 @@
     
     NoteEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.noteLabel.text = entry.body;
+    cell.titleLabel.text = entry.title;
     
     return cell;
 }

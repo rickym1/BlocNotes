@@ -57,6 +57,7 @@
 		DD19AEA51B7978C600EAA504 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		DD19AEA71B797CEC00EAA504 /* NoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteEntry.h; sourceTree = "<group>"; };
 		DD19AEA81B797CEC00EAA504 /* NoteEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteEntry.m; sourceTree = "<group>"; };
+		DD3A61561B7BF95000E27C47 /* BlocNotes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BlocNotes 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +453,7 @@
 				DD19AE941B794F0700EAA504 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD19AE951B794F0700EAA504 /* Build configuration list for PBXNativeTarget "BlocNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +462,7 @@
 				DD19AE971B794F0700EAA504 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -467,9 +470,10 @@
 		DD19AE761B794F0700EAA504 /* BlocNotes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DD3A61561B7BF95000E27C47 /* BlocNotes 2.xcdatamodel */,
 				DD19AE771B794F0700EAA504 /* BlocNotes.xcdatamodel */,
 			);
-			currentVersion = DD19AE771B794F0700EAA504 /* BlocNotes.xcdatamodel */;
+			currentVersion = DD3A61561B7BF95000E27C47 /* BlocNotes 2.xcdatamodel */;
 			path = BlocNotes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

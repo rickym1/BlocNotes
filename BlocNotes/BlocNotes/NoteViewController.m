@@ -23,6 +23,7 @@
     
     if (self.entry != nil) {
         self.addNoteTextView.text = self.entry.body;
+        self.addTitleTextView.text = self.entry.title;
     }
 }
 
@@ -37,6 +38,7 @@
     NoteEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"NoteEntry" inManagedObjectContext:coreDataStack.managedObjectContext];
     entry.body = self.addNoteTextView.text;
     entry.date = [[NSDate date] timeIntervalSince1970];
+    entry.title = self.addTitleTextView.text;
     [coreDataStack saveContext];
     
 }
@@ -44,6 +46,7 @@
 - (void) updateNoteEntry {
     
     self.entry.body = self.addNoteTextView.text;
+    self.entry.title = self.addTitleTextView.text;
     
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
     [coreDataStack saveContext];

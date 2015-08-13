@@ -13,5 +13,6 @@
 
 @dynamic date;
 @dynamic body;
+@dynamic title;
 
 @end
