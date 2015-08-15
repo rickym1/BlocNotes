@@ -20,6 +20,13 @@
 		DD19AEA31B79609100EAA504 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA21B79609100EAA504 /* NoteTableViewCell.m */; };
 		DD19AEA61B7978C600EAA504 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA51B7978C600EAA504 /* CoreDataStack.m */; };
 		DD19AEA91B797CEC00EAA504 /* NoteEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA81B797CEC00EAA504 /* NoteEntry.m */; };
+		DD3A61611B7D4CC500E27C47 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3A61601B7D4CC500E27C47 /* ShareViewController.m */; };
+		DD3A61631B7D4CC500E27C47 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A61621B7D4CC500E27C47 /* MainInterface.storyboard */; };
+		DD3A61661B7D4CC500E27C47 /* ShareW.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD3A615B1B7D4CC500E27C47 /* ShareW.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD3A616D1B7EA37400E27C47 /* BlocNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD19AE761B794F0700EAA504 /* BlocNotes.xcdatamodeld */; };
+		DD3A616E1B7EA3C200E27C47 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA51B7978C600EAA504 /* CoreDataStack.m */; };
+		DD3A616F1B7EA3CE00E27C47 /* NoteEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AEA81B797CEC00EAA504 /* NoteEntry.m */; };
+		DD3A61701B7EA3D300E27C47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD19AE7A1B794F0700EAA504 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +37,28 @@
 			remoteGlobalIDString = DD19AE6B1B794F0700EAA504;
 			remoteInfo = BlocNotes;
 		};
+		DD3A61641B7D4CC500E27C47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD19AE641B794F0700EAA504 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD3A615A1B7D4CC500E27C47;
+			remoteInfo = ShareW;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD3A616A1B7D4CC600E27C47 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DD3A61661B7D4CC500E27C47 /* ShareW.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DD19AE6C1B794F0700EAA504 /* BlocNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +86,13 @@
 		DD19AEA71B797CEC00EAA504 /* NoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteEntry.h; sourceTree = "<group>"; };
 		DD19AEA81B797CEC00EAA504 /* NoteEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteEntry.m; sourceTree = "<group>"; };
 		DD3A61561B7BF95000E27C47 /* BlocNotes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BlocNotes 2.xcdatamodel"; sourceTree = "<group>"; };
+		DD3A615B1B7D4CC500E27C47 /* ShareW.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareW.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3A615E1B7D4CC500E27C47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3A615F1B7D4CC500E27C47 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		DD3A61601B7D4CC500E27C47 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		DD3A61621B7D4CC500E27C47 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		DD3A616B1B7E332800E27C47 /* BlocNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BlocNotes.entitlements; sourceTree = "<group>"; };
+		DD3A616C1B7E341D00E27C47 /* ShareW.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ShareW.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +110,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD3A61581B7D4CC500E27C47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +125,7 @@
 			children = (
 				DD19AE6E1B794F0700EAA504 /* BlocNotes */,
 				DD19AE8B1B794F0700EAA504 /* BlocNotesTests */,
+				DD3A615C1B7D4CC500E27C47 /* ShareW */,
 				DD19AE6D1B794F0700EAA504 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +135,7 @@
 			children = (
 				DD19AE6C1B794F0700EAA504 /* BlocNotes.app */,
 				DD19AE881B794F0700EAA504 /* BlocNotesTests.xctest */,
+				DD3A615B1B7D4CC500E27C47 /* ShareW.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +143,7 @@
 		DD19AE6E1B794F0700EAA504 /* BlocNotes */ = {
 			isa = PBXGroup;
 			children = (
+				DD3A616B1B7E332800E27C47 /* BlocNotes.entitlements */,
 				DD19AE7C1B794F0700EAA504 /* Main.storyboard */,
 				DD19AE981B795AA000EAA504 /* MainTableViewController.h */,
 				DD19AE991B795AA000EAA504 /* MainTableViewController.m */,
@@ -148,6 +193,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DD3A615C1B7D4CC500E27C47 /* ShareW */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A616C1B7E341D00E27C47 /* ShareW.entitlements */,
+				DD3A615F1B7D4CC500E27C47 /* ShareViewController.h */,
+				DD3A61601B7D4CC500E27C47 /* ShareViewController.m */,
+				DD3A61621B7D4CC500E27C47 /* MainInterface.storyboard */,
+				DD3A615D1B7D4CC500E27C47 /* Supporting Files */,
+			);
+			path = ShareW;
+			sourceTree = "<group>";
+		};
+		DD3A615D1B7D4CC500E27C47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A615E1B7D4CC500E27C47 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,10 +223,12 @@
 				DD19AE681B794F0700EAA504 /* Sources */,
 				DD19AE691B794F0700EAA504 /* Frameworks */,
 				DD19AE6A1B794F0700EAA504 /* Resources */,
+				DD3A616A1B7D4CC600E27C47 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DD3A61651B7D4CC500E27C47 /* PBXTargetDependency */,
 			);
 			name = BlocNotes;
 			productName = BlocNotes;
@@ -186,6 +253,23 @@
 			productReference = DD19AE881B794F0700EAA504 /* BlocNotesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DD3A615A1B7D4CC500E27C47 /* ShareW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3A61691B7D4CC600E27C47 /* Build configuration list for PBXNativeTarget "ShareW" */;
+			buildPhases = (
+				DD3A61571B7D4CC500E27C47 /* Sources */,
+				DD3A61581B7D4CC500E27C47 /* Frameworks */,
+				DD3A61591B7D4CC500E27C47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareW;
+			productName = ShareW;
+			productReference = DD3A615B1B7D4CC500E27C47 /* ShareW.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +281,25 @@
 				TargetAttributes = {
 					DD19AE6B1B794F0700EAA504 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9GHX6BADCR;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DD19AE871B794F0700EAA504 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = DD19AE6B1B794F0700EAA504;
+					};
+					DD3A615A1B7D4CC500E27C47 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9GHX6BADCR;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -219,6 +318,7 @@
 			targets = (
 				DD19AE6B1B794F0700EAA504 /* BlocNotes */,
 				DD19AE871B794F0700EAA504 /* BlocNotesTests */,
+				DD3A615A1B7D4CC500E27C47 /* ShareW */,
 			);
 		};
 /* End PBXProject section */
@@ -238,6 +338,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD3A61591B7D4CC500E27C47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3A61631B7D4CC500E27C47 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +376,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD3A61571B7D4CC500E27C47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3A61611B7D4CC500E27C47 /* ShareViewController.m in Sources */,
+				DD3A616D1B7EA37400E27C47 /* BlocNotes.xcdatamodeld in Sources */,
+				DD3A616F1B7EA3CE00E27C47 /* NoteEntry.m in Sources */,
+				DD3A616E1B7EA3C200E27C47 /* CoreDataStack.m in Sources */,
+				DD3A61701B7EA3D300E27C47 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -275,6 +395,11 @@
 			isa = PBXTargetDependency;
 			target = DD19AE6B1B794F0700EAA504 /* BlocNotes */;
 			targetProxy = DD19AE891B794F0700EAA504 /* PBXContainerItemProxy */;
+		};
+		DD3A61651B7D4CC500E27C47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD3A615A1B7D4CC500E27C47 /* ShareW */;
+			targetProxy = DD3A61641B7D4CC500E27C47 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -384,9 +509,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlocNotes/BlocNotes.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlocNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -394,9 +523,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlocNotes/BlocNotes.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlocNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -434,6 +567,38 @@
 			};
 			name = Release;
 		};
+		DD3A61671B7D4CC600E27C47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareW/ShareW.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShareW/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DD3A61681B7D4CC600E27C47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareW/ShareW.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ShareW/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -463,6 +628,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DD3A61691B7D4CC600E27C47 /* Build configuration list for PBXNativeTarget "ShareW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3A61671B7D4CC600E27C47 /* Debug */,
+				DD3A61681B7D4CC600E27C47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

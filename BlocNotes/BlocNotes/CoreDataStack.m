@@ -56,10 +56,14 @@
                               NSInferMappingModelAutomaticallyOption : @YES
                               };
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BlocNotes.sqlite"];
+    
     NSError *error = nil;
+    
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+    NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.rickmatta.blocnotes"];
+    containerURL = [containerURL URLByAppendingPathComponent:@"BlocNotes.sqlite"];
+    
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:containerURL options:options error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
