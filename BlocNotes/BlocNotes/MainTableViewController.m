@@ -12,9 +12,12 @@
 #import "NoteViewController.h"
 #import "NoteTableViewCell.h"
 
-@interface MainTableViewController () <NSFetchedResultsControllerDelegate>
+@interface MainTableViewController () <NSFetchedResultsControllerDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UISearchControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSArray *filteredList;
+@property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
+
 
 @end
 
@@ -34,6 +37,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
+    // self.searchFetchRequest = nil;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -42,26 +46,47 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
+    if (tableView == self.tableView) {
+        return self.fetchedResultsController.sections.count;
+
+    } else {
+        return 1;
+    }
     
-    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    if (tableView == self.tableView) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+        return [sectionInfo numberOfObjects];
+    } else {
+        return self.filteredList.count;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NoteEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NoteEntry *entry = nil;
+    if (tableView == self.tableView) {
+        entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    } else {
+        entry = [self.filteredList objectAtIndex:indexPath.row];
+    }
+    
     cell.noteLabel.text = entry.body;
     cell.titleLabel.text = entry.title;
     
     return cell;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
+{
+    tableView.rowHeight = 64;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -106,13 +131,77 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:@"showEditNote"]) {
+        
+        NoteEntry *entry = nil;
         UITableViewCell *cell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+
+        if (self.searchDisplayController.isActive) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:cell];
+            entry = [self.filteredList objectAtIndex:indexPath.row];
+        } else {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+        }
+        
+        
+        
         NoteViewController *noteViewController = (NoteViewController *)segue.destinationViewController;
-        noteViewController.entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        noteViewController.entry = entry;
     }
 }
+
+
+
+- (NSFetchRequest *)searchFetchRequest
+{
+    if (_searchFetchRequest != nil)
+    {
+        return _searchFetchRequest;
+    }
+    
+    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+    
+    _searchFetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"NoteEntry" inManagedObjectContext:coreDataStack.managedObjectContext];
+    [_searchFetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    [_searchFetchRequest setSortDescriptors:sortDescriptors];
+    
+    return _searchFetchRequest;
+}
+
+- (void)searchForText:(NSString *)searchText
+{
+    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+    
+    if (coreDataStack.managedObjectContext)
+    {
+        NSString *predicateFormat = @"%K CONTAINS[cd] %@ or @K CONTAINS[cd] %@";
+        NSString *searchAttribute = @"body";
+        
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, searchAttribute, searchText, @"title", searchText];
+        [self.searchFetchRequest setPredicate:predicate];
+        
+        NSError *error = nil;
+        self.filteredList = [coreDataStack.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
+    }
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    
+    [self searchForText:searchString];
+    return YES;
+}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
