@@ -11,7 +11,7 @@
 #import "CoreDataStack.h"
 
 
-@interface NoteViewController ()
+@interface NoteViewController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -24,7 +24,28 @@
     if (self.entry != nil) {
         self.addNoteTextView.text = self.entry.body;
         self.addTitleTextView.text = self.entry.title;
+        
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editTextRecognizerTabbed:)];
+        recognizer.delegate = self;
+        recognizer.numberOfTapsRequired = 1;
+        [self.addNoteTextView addGestureRecognizer:recognizer];
     }
+    
+}
+
+- (void) editTextRecognizerTabbed: (UITapGestureRecognizer *) aRecognizer {
+    
+    self.addNoteTextView.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.addNoteTextView.editable = YES;
+    [self.addNoteTextView becomeFirstResponder];
+    
+}
+
+- (void)textViewDidEndEditing: (UITextView *) textView {
+    
+    self.addNoteTextView.editable = NO;
+    self.addNoteTextView.dataDetectorTypes = UIDataDetectorTypeAll;
+    
 }
 
 - (void)didReceiveMemoryWarning {
