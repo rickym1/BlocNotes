@@ -55,7 +55,8 @@
     
     NSDictionary *options = @{
                               NSMigratePersistentStoresAutomaticallyOption : @YES,
-                              NSInferMappingModelAutomaticallyOption : @YES
+                              NSInferMappingModelAutomaticallyOption : @YES, NSPersistentStoreUbiquitousContentNameKey : @"iCloudStore"
+                              
                               };
     
     
@@ -94,7 +95,7 @@
     }
     _managedObjectContext = [[NSManagedObjectContext alloc] init];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    return _managedObjectContext;
+    
     
     
     
@@ -113,28 +114,9 @@
                name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
              object:psc];
     
-    NSError* error;
-    // the only difference in this call that makes the store an iCloud enabled store
-    // is the NSPersistentStoreUbiquitousContentNameKey in options. I use "iCloudStore"
-    // but you can use what you like. For a non-iCloud enabled store, I pass "nil" for options.
-    
-    // Note that the store URL is the same regardless of whether you're using iCloud or not.
-    // If you create a non-iCloud enabled store, it will be created in the App's Documents directory.
-    // An iCloud enabled store will be created below a directory called CoreDataUbiquitySupport
-    // in your App's Documents directory
-    [self.managedObjectContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                                       configuration:nil
-                                                                                 URL:self.storeURL
-                                                                             options:@{ NSPersistentStoreUbiquitousContentNameKey : @"iCloudStore" }
-                                                                               error:&error];
-    if (error) {
-        NSLog(@"error: %@", error);
+    return _managedObjectContext;
 }
-    
-- (NSManagedObjectModel*)managedObjectModel
-{
-        return [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
-}
+
 
 - (void)persistentStoreDidImportUbiquitousContentChanges:(NSNotification*)note
 {
@@ -156,11 +138,6 @@
             [allChanges unionSet:changes[NSInsertedObjectsKey]];
             [allChanges unionSet:changes[NSUpdatedObjectsKey]];
             [allChanges unionSet:changes[NSDeletedObjectsKey]];
-            
-            for (NSManagedObjectID *objID in allChanges) {
-                // do whatever you need to with the NSManagedObjectID
-                // you can retrieve the object from with [moc objectWithID:objID]
-        }
             
     }];
 }
